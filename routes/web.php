@@ -22,7 +22,6 @@ Route::get('/', function () {
     return view('welcome', compact('products'));
 })->name('welcome');
 
-Route::view('/admin', 'admin.index');
 
 Route::middleware(['auth'])->group(function () {
     Route::get("/profile", [ProfileController::class, 'index'])->name('profile.index');

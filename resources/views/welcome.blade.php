@@ -45,7 +45,7 @@
             </div>
             <div class="col-lg-6 text-center">
                 <h1 class="display-5 mb-3">How We Operate?</h1>
-                <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos delectus
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos delectus
                     cupiditate optio, totam
                     quis dolorum?
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nulla dolores animi, excepturi
