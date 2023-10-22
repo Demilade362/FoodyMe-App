@@ -31,22 +31,23 @@
             <div class="offcanvas-body">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link
+                    " href="{{ route('admin.dashboard') }}">
                             <i class="bi bi-speedometer2"></i> Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/clients">
+                        <a class="nav-link" href="{{ route('admin.customers') }}">
                             <i class="bi bi-person"></i> Customers
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('admin.products') }}">
                             <i class="bi bi-bag"></i> Products
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('admin.orders') }}">
                             <i class="bi bi-clipboard-check"></i> Orders
                         </a>
                     </li>
@@ -66,22 +67,23 @@
             <h3 class="sidebar-logo">Foody<span class="text-light">Me</span></h3>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link @if (@route('admin.dashboard')) active @endif" href="/home">
+                    <a class="nav-link
+                    " href="{{ route('admin.dashboard') }}">
                         <i class="bi bi-speedometer2"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.customers') }}">
                         <i class="bi bi-person"></i> Customers
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.products') }}">
                         <i class="bi bi-bag"></i> Products
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('admin.orders') }}">
                         <i class="bi bi-clipboard-check"></i> Orders
                     </a>
                 </li>
@@ -97,7 +99,9 @@
             </div>
         </div>
 
-        @yield('content')
+        <div class="content">
+            @yield('content')
+        </div>
     </div>
 
     <div class="footer mt-4 text-center">

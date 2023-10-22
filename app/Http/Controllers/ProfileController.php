@@ -7,6 +7,7 @@ use App\Http\Requests\ProfileUpdatePasswordRequest;
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 
@@ -18,6 +19,7 @@ class ProfileController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
+        Gate::authorize('can-update-profile', $request->user());
         return view('auth.profile', compact('user'));
     }
 
@@ -27,8 +29,8 @@ class ProfileController extends Controller
      */
     public function updateInfo(ProfileUpdateRequest $request, User $user)
     {
+        Gate::authorize('can-update-profile', $request->user());
         $user->update($request->validated());
-
         return Redirect::route("profile.index")->with('info_alert', 'Basic Profile Info Updated Successfully');
     }
 
@@ -37,6 +39,7 @@ class ProfileController extends Controller
      */
     public function updatePass(ProfileUpdatePasswordRequest $request, User $user)
     {
+        Gate::authorize('can-update-profile', $request->user());
         $user->update($request->validated());
         return Redirect::route('profile.index')->with('password_alert', 'Password Updated Successfully');
     }
@@ -47,6 +50,7 @@ class ProfileController extends Controller
      */
     public function destroy(ProfileDeleteRequest $request, User $user)
     {
+        Gate::authorize('can-update-profile', $request->user());
         $request->validated();
 
         auth()->logout();

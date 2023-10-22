@@ -8,11 +8,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="/" class="nav-link active">About</a></li>
-                <li class="nav-item"><a href="/" class="nav-link active">Contact</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
                 @auth
-                    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Products</a></li>
+                    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">Products</a></li>
+
+                    @can('is-admin')
+                        <li class="nav-item">
+                            <a href="{{ route('admin.dashboard') }}" class="nav-link">Admin Dashboard</a>
+                        </li>
+                    @endcan
                 @endauth
             </ul>
             <ul class="navbar-nav ms-auto">

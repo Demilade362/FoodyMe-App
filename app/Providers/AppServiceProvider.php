@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,5 +24,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+
+        Gate::define('is-admin', function (User $user) {
+            return $user->role == "admin";
+        });
+
+        Gate::define('can-update-profile', function (User $user, $requestUser) {
+            return $user->id == $requestUser->id;
+        });
     }
 }
