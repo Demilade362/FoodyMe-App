@@ -25,7 +25,9 @@
     <div class="d-flex">
         <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" data-bs-scroll="true">
             <div class="offcanvas-header">
-                <h3 class="offcanvas-title">Foody<span class="text-light">Me</span></h3>
+                <h3 class="offcanvas-title"><a href="{{ route('home') }}"
+                        class="text-decoration-none text-dark">Foody<span class="text-light">Me</span></a>
+                </h3>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -37,7 +39,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.customers') }}">
+                        <a class="nav-link" href="{{ route('admin.customers.index') }}">
                             <i class="bi bi-person"></i> Customers
                         </a>
                     </li>
@@ -64,7 +66,8 @@
         </div>
 
         <div class="sidebar bg-warning text-dark d-none d-lg-block">
-            <h3 class="sidebar-logo">Foody<span class="text-light">Me</span></h3>
+            <h3 class="sidebar-logo"><a href="{{ route('home') }}" class="text-decoration-none text-dark">Foody<span
+                        class="text-light">Me</span></a></h3>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link
@@ -73,7 +76,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.customers') }}">
+                    <a class="nav-link" href="{{ route('admin.customers.index') }}">
                         <i class="bi bi-person"></i> Customers
                     </a>
                 </li>
@@ -99,14 +102,29 @@
             </div>
         </div>
 
-        <div class="content">
+
+        <div class="content" style="width: 100%">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="header d-lg-block d-flex align-items-center">
+                    <button class="d-lg-none btn btn-outline-dark me-4" data-bs-toggle="offcanvas"
+                        data-bs-target="#sidebar">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <h1>Welcome Admin</h1>
+                </div>
+                <div class="mb-3 d-flex justify-content-between align-items-center">
+                    <a href="#" class="btn btn-warning rounded-circle shadow-sm">
+                        <i class="bi bi-person-fill"></i>
+                    </a>
+                </div>
+            </div>
             @yield('content')
         </div>
     </div>
 
-    <div class="footer mt-4 text-center">
+    <footer class="footer mt-4 text-center">
         <p>Copyright &copy; Foody<span class="text-warning">Me</span> Inc. </p>
-    </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

@@ -19,7 +19,6 @@
 #banner::after {
     content: '';
     background: rgba(0, 0, 0, 0.5);
-    /* Dark overlay color */
     position: absolute;
     top: 0;
     left: 0;

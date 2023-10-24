@@ -1,20 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <div class="d-flex align-items-center justify-content-between">
-        <div class="header d-lg-block d-flex align-items-center">
-            <button class="d-lg-none btn btn-outline-dark me-4" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
-                <i class="bi bi-list"></i>
-            </button>
-            <h1>Welcome Admin</h1>
-        </div>
-        <div class="mb-3 d-flex justify-content-between align-items-center">
-            <a href="#" class="btn btn-warning rounded-circle shadow-sm">
-                <i class="bi bi-person-fill"></i>
-            </a>
-        </div>
-    </div>
-
     <div class="row">
         <div class="col-md-6">
             <div class="card shadow-sm">

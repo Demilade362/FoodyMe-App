@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Request;
 
 class AppServiceProvider extends ServiceProvider
 {

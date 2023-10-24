@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CustomerController;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 
@@ -7,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route::view('/home', 'admin.index')->name('dashboard');
-Route::view("/customers", 'admin.Customers.index')->name('customers');
+Route::resource('customers', CustomerController::class);
 Route::view('/products', 'admin.Products.index')->name('products');
 Route::view('/orders', 'admin.Orders.index')->name('orders');
 
