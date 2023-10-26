@@ -3,20 +3,19 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\admin\CustomerStoreRequest;
-use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Kreait\Firebase\Storage;
 
-class CustomerController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-
     {
-        $users = User::where('role', null)->paginate(6);
-        return view("admin.Customers.index", compact('users'));
+        $products = Product::paginate(6);
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -24,33 +23,30 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('admin.Customers.create');
+        return view('admin.products.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CustomerStoreRequest $request)
+    public function store(Request $request)
     {
-        $user = $request->validated();
-        User::create($user);
 
-        $userName = $user['name'];
-        return redirect()->route('admin.customers.index')->with('msg', "$userName has been created");
+        // Return a response, e.g., a success message or a redirect.
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Product $product)
     {
-        //
+        return view('admin.products.show', compact('product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Product $product)
     {
         //
     }
@@ -58,7 +54,7 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -66,7 +62,7 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Product $product)
     {
         //
     }

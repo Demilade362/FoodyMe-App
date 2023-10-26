@@ -1,18 +1,21 @@
 <?php
 
-use App\Http\Controllers\admin\CustomerController;
+use App\Http\Controllers\admin\{
+    CustomerController,
+    ProductController
+};
+use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 
 
+Route::middleware(['auth', 'can:is-admin'])->group(function () {
+    Route::get("/home", function () {
+        $customers = User::where('role', null)->limit(4)->get();
+        return view("admin.index", compact('customers'));
+    })->name('dashboard');
 
-
-// Route::view('/home', 'admin.index')->name('dashboard');
-Route::resource('customers', CustomerController::class);
-Route::view('/products', 'admin.Products.index')->name('products');
-Route::view('/orders', 'admin.Orders.index')->name('orders');
-
-Route::get("/home", function () {
-    Gate::authorize('is-admin');
-    return view("admin.index");
-})->name('dashboard');
+    Route::resource('customers', CustomerController::class);
+    Route::resource('products', ProductController::class);
+    Route::view('/orders', 'admin.Orders.index')->name('orders');
+});

@@ -17,7 +17,91 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../main.css">
+    {{-- <link rel="stylesheet" href="../main.css"> --}}
+    <style>
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #343a40;
+            color: #000;
+            padding-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+        }
+
+        .sidebar-logo {
+            color: #000;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul.nav {
+            margin-top: 30px;
+        }
+
+        .sidebar .nav-link {
+            color: #000;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #2c3036;
+            color: #fff;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #2c3036;
+            color: #fff;
+        }
+
+        .sidebar .logout-btn {
+            margin-top: 15rem;
+        }
+
+        .content {
+            margin-left: 0;
+            padding: 20px;
+            transition: margin 0.3s ease;
+        }
+
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar {
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 250px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .sidebar {
+                transform: translateX(0);
+            }
+
+            .content {
+                margin-left: 0px;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-light">
@@ -44,7 +128,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.products') }}">
+                        <a class="nav-link" href="{{ route('admin.products.index') }}">
                             <i class="bi bi-bag"></i> Products
                         </a>
                     </li>
@@ -81,7 +165,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.products') }}">
+                    <a class="nav-link" href="{{ route('admin.products.index') }}">
                         <i class="bi bi-bag"></i> Products
                     </a>
                 </li>

@@ -10,7 +10,7 @@
                          <p class="lead">
                              The taste is always unique from the rest with foody me.
                          </p>
-                         <a href="/products" class="btn btn-outline-warning border-5 btn-lg">Order Now</a>
+                         <a href="/products" class="btn btn-warning border-5 btn-lg">Order Now</a>
                      </div>
                  </div>
              </div>

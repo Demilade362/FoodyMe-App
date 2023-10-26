@@ -1,10 +1,18 @@
 @extends('admin.layouts.app')
 
 @section('content')
+    @if (session('msg'))
+        <div class="mb-3">
+            <div class="alert alert-primary alert-dismissible fade show text-center" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span>{{ session('msg') }}</span>
+            </div>
+        </div>
+    @endif
     <div class="table-responsive">
-        <button class="btn btn-warning mb-4">Create a User
+        <a href="{{ route('admin.customers.create') }}" class="btn btn-warning mb-4">Create a User
             <i class="bi bi-plus"></i>
-        </button>
+        </a>
         <table class="table">
             <thead>
                 <tr>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    .<div class="container mt-5">
+    <div class="container mt-5">
         <div class="row justify-content-between align-items-center g-2">
             <div class="col-lg-7">
                 <img src="{{ $product->image->image_url }}" class="img-fluid rounded" alt="burger">

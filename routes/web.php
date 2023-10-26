@@ -31,7 +31,9 @@ Route::middleware(['auth'])->group(function () {
     Route::delete("/profile/{user}", [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('products', ProductController::class)->names([
         'index' => 'home'
-    ]);
+    ])->except(
+        ['create', 'store', 'update', 'destroy', 'edit']
+    );
 });
 
 
