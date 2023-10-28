@@ -10,9 +10,6 @@
         </div>
     @endif
     <div class="table-responsive">
-        <a href="{{ route('admin.customers.create') }}" class="btn btn-warning mb-4">Create a User
-            <i class="bi bi-plus"></i>
-        </a>
         <table class="table">
             <thead>
                 <tr>

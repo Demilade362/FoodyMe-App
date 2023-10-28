@@ -20,7 +20,7 @@
     {{-- <link rel="stylesheet" href="../main.css"> --}}
     <style>
         .sidebar {
-            width: 250px;
+            width: 260px;
             height: 100vh;
             position: fixed;
             top: 0;
@@ -68,14 +68,14 @@
 
         .content {
             margin-left: 0;
-            padding: 20px;
+            padding: 15px;
             transition: margin 0.3s ease;
+            padding-left: 30px;
         }
 
         .header {
             background-color: #f8f9fa;
-            padding: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .header h1 {
@@ -165,8 +165,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.customers.create') }}">
+                        <i class="bi bi-person-fill"></i>Create Customer
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.products.index') }}">
-                        <i class="bi bi-bag"></i> Products
+                        <i class="bi
+                        bi-bag"></i> Products
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.products.create') }}">
+                        <i class="bi
+                        bi-bag-fill"></i> Add Product
                     </a>
                 </li>
                 <li class="nav-item">
@@ -188,28 +200,21 @@
 
 
         <div class="content" style="width: 100%">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex justify-content-between align-items-center">
                 <div class="header d-lg-block d-flex align-items-center">
                     <button class="d-lg-none btn btn-outline-dark me-4" data-bs-toggle="offcanvas"
                         data-bs-target="#sidebar">
                         <i class="bi bi-list"></i>
                     </button>
-                    <h1>Welcome Admin</h1>
+                    <h1 class="display-6">Welcome Admin</h1>
                 </div>
-                <div class="mb-3 d-flex justify-content-between align-items-center">
-                    <a href="#" class="btn btn-warning rounded-circle shadow-sm">
-                        <i class="bi bi-person-fill"></i>
-                    </a>
-                </div>
+                <a href="#" class="btn btn-warning rounded-circle shadow-sm">
+                    <i class="bi bi-person-fill"></i>
+                </a>
             </div>
             @yield('content')
         </div>
     </div>
-
-    <footer class="footer mt-4 text-center">
-        <p>Copyright &copy; Foody<span class="text-warning">Me</span> Inc. </p>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/bootstrap-icons.min.js"></script>

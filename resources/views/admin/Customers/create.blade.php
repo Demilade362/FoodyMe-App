@@ -1,9 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <a href="{{ route('admin.customers.index') }}" class="btn btn-warning text-end">Customers Page
-        <i class="bi bi-person"></i>
-    </a>
     <form action="{{ route('admin.customers.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row justify-content-around align-items-center mt-5">

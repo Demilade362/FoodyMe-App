@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-6">
-            <div class="card shadow-sm">
+            <div class="card border-0">
                 <div class="card-body">
                     <h5 class="card-title">
                         Orders</h5>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card shadow-sm">
+            <div class="card border-0">
                 <div class="card-body">
                     <h5 class="card-title placeholder-glow">Products</h5>
                     <p class="card-text placeholder-glow">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -37,7 +37,7 @@
 
     <div class="row mt-4">
         <div class="col-md-12">
-            <div class="card shadow-sm">
+            <div class="card border-0">
                 <div class="card-body">
                     <h5 class="card-title">View Customers</h5>
                     <table class="table">

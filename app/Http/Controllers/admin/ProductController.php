@@ -5,7 +5,6 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Kreait\Firebase\Storage;
 
 class ProductController extends Controller
 {
@@ -31,8 +30,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        // Return a response, e.g., a success message or a redirect.
+        //
     }
 
     /**

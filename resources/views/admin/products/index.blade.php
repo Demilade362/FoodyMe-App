@@ -2,9 +2,6 @@
 
 @section('content')
     <div class="table-responsive">
-        <a href="{{ route('admin.products.create') }}" class="btn btn-warning mb-4">Add Product
-            <i class="bi bi-plus"></i>
-        </a>
         <table class="table">
             <thead>
                 <tr>
