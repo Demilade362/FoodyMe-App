@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 
 @section('content')
-    <form action="{{ route('admin.customers.store') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="row justify-content-around align-items-center mt-5">
-            <div class="col-lg-8">
+    <div class="row  align-items-center">
+        <div class="col">
+            <form action="{{ route('admin.customers.store') }}" method="post">
+                @csrf
                 <div class="mb-3">
                     <label for="name">Name</label>
                     <input type="text" placeholder="John Doe" name="name"
@@ -47,8 +47,10 @@
                         </span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-warning col-12 my-3">Create Customer</button>
-            </div>
+                <button type="submit" class="btn btn-warning col-12 my-3">Create Customer
+                    <i class="bi bi-plus"></i>
+                </button>
+            </form>
         </div>
-    </form>
+    </div>
 @endsection

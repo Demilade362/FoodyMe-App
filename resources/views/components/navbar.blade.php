@@ -1,5 +1,5 @@
 @props(['color'])
-<nav class="navbar navbar-expand-md {{ $color ?? 'bg-warning' }} navbar-light sticky-top shadow-sm">
+<nav class="navbar navbar-expand-md {{ $color ?? 'bg-warning' }} navbar-light sticky-top">
     <div class="container">
         <a href="{{ url('/') }}" class="navbar-brand">Foody<span class="text-white">Me</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -11,6 +11,7 @@
                 <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="/" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/" class="nav-link">Services</a></li>
                 @auth
                     <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">Products</a></li>
 
@@ -29,8 +30,7 @@
                             <span class="badge bg-danger">12</span>
                         </a>
                     </li>
-                    <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id1" aria-controls="Id1"><a
-                            href="#" class="nav-link">
+                    <li class="nav-item"><a href="{{ route('cart.index') }}" class="nav-link">
                             <i class="bi bi-cart-fill"></i>
                             <span class="badge bg-danger">5</span>
                         </a></li>

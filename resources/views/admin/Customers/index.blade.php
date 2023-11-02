@@ -15,7 +15,7 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Action</th>
+                    <th scope="col" align="end"></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,7 +23,7 @@
                     <tr class="">
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>
+                        <td align="end">
                             <div class="d-flex-justify-content-between">
                                 <button class="btn btn-danger btn-sm">
                                     <i class="bi bi-trash"></i>

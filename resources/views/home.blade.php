@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="container">
+        @if (session('msg'))
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span>{{ session('msg') }}</span>
+            </div>
+        @endif
+
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center align-items-center">
             @forelse ($products as $product)
                 <div class="col">

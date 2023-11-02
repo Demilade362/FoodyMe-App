@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductStoreRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -28,9 +29,26 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        //
+        if ($request->hasFile('image_url')) {
+            $image = $request->file('image_url');
+            $name = $image->hashName();
+            $newImage = $name;
+            $image->storeAs('public/images', $newImage);
+        }
+
+        $product = Product::create([
+            'product_name' => $request->product_name,
+            'product_description' => $request->product_description,
+            'price' => $request->price
+        ]);
+
+        $product->image()->create([
+            'image_url' => "storage/images/$newImage"
+        ]);
+
+        return redirect()->route('admin.products.index')->with('msg', 'New Products Added');
     }
 
     /**

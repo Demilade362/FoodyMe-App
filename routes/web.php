@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +36,9 @@ Route::middleware(['auth'])->group(function () {
     ])->except(
         ['create', 'store', 'update', 'destroy', 'edit']
     );
+    Route::resource('cart', CartController::class);
+    Route::post('/session', [StripeController::class, 'session'])->name('session');
+    Route::get('/success', [StripeController::class, 'success'])->name('success');
 });
 
 

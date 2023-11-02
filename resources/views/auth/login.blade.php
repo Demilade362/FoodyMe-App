@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h3 class="lead text-center">{{ __('Foody Me') }} Login</h3>
                         <hr>
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}" id="login">
                             @csrf
 
                             <div class="row mb-3">

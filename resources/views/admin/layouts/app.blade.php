@@ -208,7 +208,7 @@
                     </button>
                     <h1 class="display-6">Welcome Admin</h1>
                 </div>
-                <a href="#" class="btn btn-warning rounded-circle shadow-sm">
+                <a href="#" class="btn btn-warning rounded-circle">
                     <i class="bi bi-person-fill"></i>
                 </a>
             </div>
