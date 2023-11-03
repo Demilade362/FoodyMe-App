@@ -47,7 +47,7 @@
                         </span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-warning col-12 my-3">Create Customer
+                <button type="submit" class="btn btn-danger col-12 my-3">Create Customer
                     <i class="bi bi-plus"></i>
                 </button>
             </form>

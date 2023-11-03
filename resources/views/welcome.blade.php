@@ -21,7 +21,7 @@
 </head>
 
 <body class="bg-white">
-    <x-navbar color='bg-warning' />
+    <x-navbar color='bg-danger' />
     <x-banner />
     <x-simple-product :products="$products" />
 
@@ -115,8 +115,6 @@
 
 
     <x-footer />
-
-
 
 </body>
 

@@ -1,23 +1,23 @@
 @props(['color'])
-<nav class="navbar navbar-expand-md {{ $color ?? 'bg-warning' }} navbar-light sticky-top">
+<nav class="navbar navbar-expand-md {{ $color ?? 'bg-danger' }} navbar-dark sticky-top">
     <div class="container">
-        <a href="{{ url('/') }}" class="navbar-brand">Foody<span class="text-white">Me</span></a>
+        <a href="{{ url('/') }}" class="navbar-brand">Foody<span class="text-warning">Me</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="/" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="/" class="nav-link active">About</a></li>
+                <li class="nav-item"><a href="/" class="nav-link active">Contact</a></li>
+                <li class="nav-item"><a href="/" class="nav-link active">Services</a></li>
                 @auth
-                    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">Products</a></li>
+                    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Products</a></li>
 
                     @can('is-admin')
                         <li class="nav-item">
-                            <a href="{{ route('admin.dashboard') }}" class="nav-link">Admin Dashboard</a>
+                            <a href="{{ route('admin.dashboard') }}" class="nav-link active">Admin Dashboard</a>
                         </li>
                     @endcan
                 @endauth
@@ -25,14 +25,14 @@
             <ul class="navbar-nav ms-auto">
                 @auth
                     <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link active">
                             <i class="bi bi-bell-fill"></i>
-                            <span class="badge bg-danger">12</span>
+                            <span class="badge bg-warning">12</span>
                         </a>
                     </li>
-                    <li class="nav-item"><a href="{{ route('cart.index') }}" class="nav-link">
+                    <li class="nav-item"><a href="{{ route('cart.index') }}" class="nav-link active">
                             <i class="bi bi-cart-fill"></i>
-                            <span class="badge bg-danger">5</span>
+                            <span class="badge bg-warning">5</span>
                         </a></li>
 
 
@@ -101,22 +101,22 @@
         {{-- <div>
             I will not close if you click outside of me.
         </div> --}}
-        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert">
+        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
         </div>
 
-        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert">
+        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
         </div>
 
-        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert">
+        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
         </div>
 
-        <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert">
+        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
         </div>

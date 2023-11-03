@@ -31,7 +31,7 @@
 
                             @auth
                                 <a href="{{ route('products.show', $product->id) }}"
-                                    class="btn btn-warning justify-content-center col-12 d-flex align-items-center">
+                                    class="btn btn-danger justify-content-center col-12 d-flex align-items-center">
                                     <i class="bi bi-cart-fill me-2"></i>
                                     <span>Order Now</span>
                                 </a>

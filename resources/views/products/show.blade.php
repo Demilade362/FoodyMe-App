@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                    <button class="btn btn-warning shadow-sm col-12" data-bs-toggle="modal" data-bs-target="#modalId">
+                    <button class="btn btn-danger shadow-sm col-12" data-bs-toggle="modal" data-bs-target="#modalId">
                         <i class="bi bi-cart-fill"></i>
                         Order</button>
                 </div>
@@ -100,15 +100,16 @@
                     <form action="{{ route('session') }}" method="post">
                         @csrf
                         @method('POST')
-                        <input type="text" value="{{ $product->product_name }}" name="product_name" id="product_name">
+                        <input type="text" value="{{ $product->product_name }}" name="product_name" id="product_name"
+                            hidden>
                         <input type="text" name="image_url" id="image"
-                            value="http://127.0.0.1:8000/{{ $product->image->image_url }}">
-                        <input type="number" name="quantity" id="quantity">
-                        <input type="number" name="price" id="price" value="{{ $product->price }}">
+                            value="http://127.0.0.1:8000/{{ $product->image->image_url }}" hidden>
+                        <input type="number" name="quantity" id="quantity" hidden>
+                        <input type="number" name="price" id="price" value="{{ $product->price }}" hidden>
                         <label for="address" class="form-label">Delivery Address</label>
                         <input type="text" name="address" id="address" value="{{ old('address') }}"
-                            class="form-control mb-3" placeholder="16, Main Street, Newyork city">
-                        <button type="submit" class="btn btn-warning shadow-sm col-12">
+                            class="form-control mb-3" placeholder="16, Main Street, New york city">
+                        <button type="submit" class="btn btn-danger shadow-sm col-12">
                             <i class="bi bi-check"></i>
                             Proceed To Checkout</button>
                     </form>

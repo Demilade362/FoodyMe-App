@@ -31,7 +31,7 @@
                 <div class="input-group mb-3">
                     <input type="email" class="form-control rounded-0" placeholder="Your email">
                     <div class="input-group-append">
-                        <button class="btn btn-warning rounded-0" type="button">Subscribe</button>
+                        <button class="btn btn-danger rounded-0" type="button">Subscribe</button>
                     </div>
                 </div>
             </div>

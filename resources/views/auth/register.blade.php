@@ -71,7 +71,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-warning shadow-sm col-12">
+                                    <button type="submit" class="btn btn-danger shadow-sm col-12">
                                         {{ __('Register') }}
                                     </button>
                                 </div>

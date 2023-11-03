@@ -13,7 +13,7 @@
                         elit. Nullam at
                         risus
                         justo.</p>
-                    <a href="#" class="btn btn-warning">View Orders
+                    <a href="#" class="btn btn-danger">View Orders
                         <i class="bi bi-eye"></i>
                     </a>
                 </div>
@@ -27,7 +27,7 @@
                         elit. Nullam at
                         risus
                         justo.</p>
-                    <a href="#" class="btn btn-warning">Add Products
+                    <a href="#" class="btn btn-danger">Add Products
                         <i class="bi bi-plus"></i>
                     </a>
                 </div>
@@ -65,7 +65,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="#" class="btn btn-warning">View All Customers
+                    <a href="#" class="btn btn-danger">View All Customers
                         <i class="bi bi-eye"></i>
                     </a>
                 </div>

@@ -26,7 +26,6 @@
             top: 0;
             left: 0;
             background-color: #343a40;
-            color: #000;
             padding-top: 20px;
             transition: transform 0.3s ease;
         }
@@ -36,7 +35,6 @@
         }
 
         .sidebar-logo {
-            color: #000;
             font-size: 24px;
             text-align: center;
             margin-bottom: 20px;
@@ -47,19 +45,19 @@
         }
 
         .sidebar .nav-link {
-            color: #000;
+            color: #fff;
             padding: 10px;
             transition: all 0.3s ease;
         }
 
         .sidebar .nav-link:hover {
-            background-color: #2c3036;
-            color: #fff;
+            background-color: #ffc107;
+            color: #000;
         }
 
         .sidebar .nav-link.active {
-            background-color: #2c3036;
-            color: #fff;
+            background-color: #ffc107;
+            color: #000;
         }
 
         .sidebar .logout-btn {
@@ -149,9 +147,9 @@
             </div>
         </div>
 
-        <div class="sidebar bg-warning text-dark d-none d-lg-block">
-            <h3 class="sidebar-logo"><a href="{{ route('home') }}" class="text-decoration-none text-dark">Foody<span
-                        class="text-light">Me</span></a></h3>
+        <div class="sidebar bg-danger text-dark d-none d-lg-block">
+            <h3 class="sidebar-logo"><a href="{{ route('home') }}" class="text-decoration-none text-white">Foody<span
+                        class="text-warning">Me</span></a></h3>
             <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link
@@ -191,7 +189,7 @@
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="logout-btn btn btn-dark col-12">
+                    <button type="submit" class="logout-btn btn btn-warning col-12">
                         <i class="bi bi-box-arrow-right"></i> Logout
                     </button>
                 </form>
@@ -208,7 +206,7 @@
                     </button>
                     <h1 class="display-6">Welcome Admin</h1>
                 </div>
-                <a href="#" class="btn btn-warning rounded-circle">
+                <a href="{{ route('profile.index') }}" class="btn btn-danger rounded-circle">
                     <i class="bi bi-person-fill"></i>
                 </a>
             </div>

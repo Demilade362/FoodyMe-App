@@ -39,7 +39,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-warning col-12">Create Product
+                <button type="submit" class="btn btn-danger col-12">Create Product
                     <i class="bi bi-plus"></i>
                 </button>
             </form>
