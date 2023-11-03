@@ -21,7 +21,7 @@
 </head>
 
 <body class="bg-white">
-    <x-navbar color='bg-white' />
+    <x-navbar color="bg-light" />
     <x-banner />
     <x-simple-product :products="$products" />
 

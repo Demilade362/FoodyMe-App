@@ -12,10 +12,18 @@
                             <span class="lead">
                                 ${{ $product->price }}</span>
                             @auth
-                                <button class="btn btn-light d-flex justify-content-around">
-                                    <i class="bi bi-cart me-2"></i>
-                                    Add To Cart
-                                </button>
+                                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                    <input type="hidden" value="{{ $product->product_name }}" name="name">
+                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                    <input type="hidden" value="{{ $product->image->image_url }}" name="image">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button class="btn btn-light d-flex justify-content-around">
+                                        <i class="bi bi-cart me-2"></i>
+                                        Add To Cart
+                                    </button>
+                                </form>
                             @endauth
                         </div>
 

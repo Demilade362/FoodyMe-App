@@ -18,11 +18,16 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <style>
+        .form-control.table {
+            display: inline;
+        }
+    </style>
 </head>
 
-<body class="bg-light">
+<body class="bg-white">
     <div id="app">
-        <x-navbar />
+        <x-navbar color="bg-light" />
         <main class="py-4">
             @yield('content')
         </main>

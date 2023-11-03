@@ -144,12 +144,12 @@
             })
 
             const alerts = document.querySelectorAll('.container .alert')
-            setTimeout(() => {
-                alerts.forEach(alert => {
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.classList.add('d-show')
                     alert.classList.remove('show')
-                    alert.style.display = 'none'
-                });
-            }, 8000);
+                }, 4000);
+            });
         </script>
     @endpush
 @endsection

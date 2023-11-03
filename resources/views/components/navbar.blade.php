@@ -1,5 +1,5 @@
 @props(['color'])
-<nav class="navbar navbar-expand-md {{ $color ?? 'bg-white' }} navbar-light sticky-top">
+<nav class="navbar navbar-expand-md {{ $color ?? 'bg-light' }} navbar-light sticky-top">
     <div class="container">
         <a href="{{ url('/') }}" class="navbar-brand text-danger">Foody<span class="text-warning">Me</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -25,18 +25,23 @@
             <ul class="navbar-nav ms-auto">
                 @auth
                     <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2">
-                        <a href="#" class="nav-link active">
+                        <a href="#" class="nav-link active position-relative"">
                             <i class="bi bi-bell-fill"></i>
-                            <span class="badge bg-danger">12</span>
+                            <span class="badge bg-danger position-absolute top-1 start-100 translate-middle">12
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
                         </a>
                     </li>
-                    <li class="nav-item"><a href="{{ route('cart.index') }}" class="nav-link active">
+                    <li class="nav-item"><a href="{{ route('cart.list') }}" class="nav-link active position-relative ms-3">
                             <i class="bi bi-cart-fill"></i>
-                            <span class="badge bg-danger">5</span>
+                            <span
+                                class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
                         </a></li>
 
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown ms-3">
                         <a id="navbarDropdown" class="nav-link active dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
