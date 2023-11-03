@@ -1,7 +1,7 @@
 @props(['color'])
-<nav class="navbar navbar-expand-md {{ $color ?? 'bg-danger' }} navbar-dark sticky-top">
+<nav class="navbar navbar-expand-md {{ $color ?? 'bg-white' }} navbar-light sticky-top">
     <div class="container">
-        <a href="{{ url('/') }}" class="navbar-brand">Foody<span class="text-warning">Me</span></a>
+        <a href="{{ url('/') }}" class="navbar-brand text-danger">Foody<span class="text-warning">Me</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -27,12 +27,12 @@
                     <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2">
                         <a href="#" class="nav-link active">
                             <i class="bi bi-bell-fill"></i>
-                            <span class="badge bg-warning">12</span>
+                            <span class="badge bg-danger">12</span>
                         </a>
                     </li>
                     <li class="nav-item"><a href="{{ route('cart.index') }}" class="nav-link active">
                             <i class="bi bi-cart-fill"></i>
-                            <span class="badge bg-warning">5</span>
+                            <span class="badge bg-danger">5</span>
                         </a></li>
 
 
@@ -68,7 +68,7 @@
 
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="btn btn-dark d-inline-block rounded">Register</a>
+                            <a href="{{ route('register') }}" class="btn btn-danger d-inline-block rounded">Register</a>
                         </li>
                     @endif
                 @endauth

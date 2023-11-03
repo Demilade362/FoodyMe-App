@@ -21,7 +21,7 @@
 </head>
 
 <body class="bg-white">
-    <x-navbar color='bg-danger' />
+    <x-navbar color='bg-white' />
     <x-banner />
     <x-simple-product :products="$products" />
 
@@ -34,13 +34,13 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nulla dolores animi, excepturi
                     consequatur autem harum praesentium sint velit consectetur?</p>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 d-lg-block d-none">
                 <img src="./assets/chef.jpg" alt="" class="img-fluid" draggable="true">
             </div>
         </div>
 
         <div class="row justify-content-between align-items-center mb-5">
-            <div class="col-lg-5">
+            <div class="col-lg-5 d-lg-block d-none">
                 <img src="./assets/delivery-man.jpg" alt="" class="img-fluid" draggable="true">
             </div>
             <div class="col-lg-6 text-center">

@@ -1,4 +1,4 @@
- <div class="mt-3">
+ <div class="my-3">
      <div class="container">
          <div class="row justify-content-between align-items-center">
              <div class="col-lg-5">
@@ -10,7 +10,7 @@
                  </p>
                  <a href="/products" class="btn btn-danger btn-lg">Order Now</a>
              </div>
-             <div class="col-lg-5">
+             <div class="col-lg-5 d-lg-block d-none">
                  <img src="assets/chef2.png" class="img-fluid" alt="image">
              </div>
          </div>

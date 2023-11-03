@@ -39,10 +39,6 @@
                                         {{ __('Send Password Reset Link') }}
                                     </button>
                                 </div>
-                                <div class="my-3">
-                                    Did you still want to reset your password if not go back to
-                                    <a href="{{ route('login') }}" class="text-decoration-none">Login Page</a>
-                                </div>
                             </div>
                         </form>
                     </div>

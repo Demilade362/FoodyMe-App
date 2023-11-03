@@ -152,35 +152,41 @@
                         class="text-warning">Me</span></a></h3>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link
-                    " href="{{ route('admin.dashboard') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.dashboard') ? 'active' : '' }}
+                    "
+                        href="{{ route('admin.dashboard') }}">
                         <i class="bi bi-speedometer2"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.customers.index') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.customers.index') ? 'active' : '' }}"
+                        href="{{ route('admin.customers.index') }}">
                         <i class="bi bi-person"></i> Customers
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.customers.create') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.customers.create') ? 'active' : '' }}"
+                        href="{{ route('admin.customers.create') }}">
                         <i class="bi bi-person-fill"></i>Create Customer
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.products.index') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.products.index') ? 'active' : '' }}"
+                        href="{{ route('admin.products.index') }}">
                         <i class="bi
                         bi-bag"></i> Products
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.products.create') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.products.create') ? 'active' : '' }}"
+                        href="{{ route('admin.products.create') }}">
                         <i class="bi
                         bi-bag-fill"></i> Add Product
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.orders') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.orders') ? 'active' : '' }}"
+                        href="{{ route('admin.orders') }}">
                         <i class="bi bi-clipboard-check"></i> Orders
                     </a>
                 </li>
