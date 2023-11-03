@@ -2,6 +2,30 @@
 
 @section('content')
     <div class="container mt-5">
+        @error('product_name')
+            <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span>{{ $message }}</span>
+            </div>
+        @enderror
+        @error('quantity')
+            <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span>{{ $message }}</span>
+            </div>
+        @enderror
+        @error('price')
+            <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span>{{ $message }}</span>
+            </div>
+        @enderror
+        @error('address')
+            <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <span>{{ $message }}</span>
+            </div>
+        @enderror
         <div class="row justify-content-between align-items-center g-2">
             @if ($product)
                 <div class="col-lg-7">
@@ -32,7 +56,7 @@
                     </div>
 
                     <button class="btn btn-warning shadow-sm col-12" data-bs-toggle="modal" data-bs-target="#modalId">
-                        <i class="bi bi-check"></i>
+                        <i class="bi bi-cart-fill"></i>
                         Order</button>
                 </div>
             @else
@@ -85,7 +109,7 @@
                         <input type="text" name="address" id="address" value="{{ old('address') }}"
                             class="form-control mb-3" placeholder="16, Main Street, Newyork city">
                         <button type="submit" class="btn btn-warning shadow-sm col-12">
-                            <i class="bi bi-bag"></i>
+                            <i class="bi bi-check"></i>
                             Proceed To Checkout</button>
                     </form>
                 </div>
@@ -117,6 +141,14 @@
                 quantity.value = counter
                 quantity_text.innerHTML = counter
             })
+
+            const alerts = document.querySelectorAll('.container .alert')
+            setTimeout(() => {
+                alerts.forEach(alert => {
+                    alert.classList.remove('show')
+                    alert.style.display = 'none'
+                });
+            }, 8000);
         </script>
     @endpush
 @endsection

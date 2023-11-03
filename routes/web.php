@@ -27,10 +27,12 @@ Route::get('/', function () {
 Route::view('/payment', 'payment.index');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get("/profile", [ProfileController::class, 'index'])->name('profile.index');
-    Route::put('/profile/{user}/info', [ProfileController::class, 'updateInfo'])->name('profile.update.info');
-    Route::put('/profile/{user}', [ProfileController::class, 'updatePass'])->name('profile.update.pass');
-    Route::delete("/profile/{user}", [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::middleware('password.confirm')->group(function () {
+        Route::get("/profile", [ProfileController::class, 'index'])->name('profile.index');
+        Route::put('/profile/{user}/info', [ProfileController::class, 'updateInfo'])->name('profile.update.info');
+        Route::put('/profile/{user}', [ProfileController::class, 'updatePass'])->name('profile.update.pass');
+        Route::delete("/profile/{user}", [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
     Route::resource('products', ProductController::class)->names([
         'index' => 'home'
     ])->except(

@@ -1,6 +1,10 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Outfit');
-@import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+
+html {
+    font-family: Roboto;
+}
 
 // Variables
 @import 'variables';

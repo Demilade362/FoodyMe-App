@@ -10,9 +10,9 @@
 
     <title>{{ config('app.name', 'Foody Me') }}</title>
 
-    <!-- Fonts -->
+    {{-- <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -35,7 +35,7 @@
                     consequatur autem harum praesentium sint velit consectetur?</p>
             </div>
             <div class="col-lg-6">
-                <img src="./assets/burger_cartoon.jpeg" alt="" class="img-fluid" draggable="true">
+                <img src="./assets/chef.jpg" alt="" class="img-fluid" draggable="true">
             </div>
         </div>
 
