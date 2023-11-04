@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StripeRequest;
+use Darryldecode\Cart\Facades\CartFacade;
+use Illuminate\Support\Facades\Request;
 
 class StripeController extends Controller
 {
+    public function getEmail()
+    {
+        return auth()->user()->email;
+    }
+
     public function session(StripeRequest $request)
     {
         $request->validated();
@@ -15,13 +22,25 @@ class StripeController extends Controller
         return $this->createCheckoutSession($request);
     }
 
+    public function cartSession(Request $request)
+    {
+        session()->put('cart_checkout_session_created', true);
+        return $this->createCartCheckoutSession($request);
+    }
+
     public function success()
     {
-        if (!session()->has('checkout_session_created')) {
+        if (!session()->has('checkout_session_created') || !session()->has('cart_checkout_session_created')) {
             abort(403);
         }
 
-        session()->forget('checkout_session_created');
+        if (session()->has('checkout_session_created')) {
+            session()->forget('checkout_session_created');
+        }
+
+        if (session()->has('cart_checkout_session_created')) {
+            session()->forget('cart_checkout_session_created');
+        }
 
         return redirect()->route('home')->with('msg', "Payment Successful Order is on it's way");
     }
@@ -50,11 +69,44 @@ class StripeController extends Controller
                 'quantity' => $quantity,
             ]],
             'mode' => 'payment',
+            'customer_email' => $this->getEmail(),
             'success_url' => route('success'),
             'cancel_url' => route('home'),
         ]);
 
 
+        return redirect()->away($checkout_session->url);
+    }
+
+    public function createCartCheckoutSession()
+    {
+        $productItems = [];
+        $value = CartFacade::getContent();
+        foreach ($value as $item) {
+            $name = $item['name'];
+            $price = $item['price'];
+            $quantity = $item['quantity'];
+
+            $stripe = new \Stripe\StripeClient(config('stripe.sk'));
+
+            $productItems[] = [
+                'price_data' => [
+                    'currency' => 'usd',
+                    'product_data' => [
+                        'name' => $name,
+                    ],
+                    'unit_amount' => (int) $price
+                ],
+                'quantity' => $quantity,
+            ];
+            $checkout_session = $stripe->checkout->sessions->create([
+                'line_items' => [$productItems],
+                'mode' => 'payment',
+                'customer_email' => $this->getEmail(),
+                'success_url' => route('success'),
+                'cancel_url' => route('home'),
+            ]);
+        }
         return redirect()->away($checkout_session->url);
     }
 }

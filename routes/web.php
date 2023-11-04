@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
     Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
     Route::post('/session', [StripeController::class, 'session'])->name('session');
+    Route::post('/cart-session', [StripeController::class, 'cartSession'])->name('cart-session');
     Route::get('/success', [StripeController::class, 'success'])->name('success');
 });
 

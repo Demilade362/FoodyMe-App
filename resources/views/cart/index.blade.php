@@ -68,7 +68,7 @@
                     <button class="btn btn-danger">Clear
                         Carts</button>
                 </form>
-                <form action="" method="GET" class="ms-4">
+                <form action="{{ route('cart-session') }}" method="POST" class="ms-4">
                     @csrf
                     <button class="btn btn-success">Checkout</button>
                 </form>
