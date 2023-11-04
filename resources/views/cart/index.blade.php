@@ -65,12 +65,16 @@
             <div class="d-flex justify-content-end align-items-center">
                 <form action="{{ route('cart.clear') }}" method="POST">
                     @csrf
-                    <button class="btn btn-danger">Clear
+                    <button class="btn btn-danger">
+                        <i class="bi bi-trash"></i>
+                        Clear
                         Carts</button>
                 </form>
                 <form action="{{ route('cart-session') }}" method="POST" class="ms-4">
                     @csrf
-                    <button class="btn btn-success">Checkout</button>
+                    <button class="btn btn-success">
+                        <i class="bi bi-check"></i>
+                        Checkout</button>
                 </form>
             </div>
         </div>

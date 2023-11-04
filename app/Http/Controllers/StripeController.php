@@ -24,23 +24,20 @@ class StripeController extends Controller
 
     public function cartSession(Request $request)
     {
-        session()->put('cart_checkout_session_created', true);
+        session()->put('checkout_session_created', true);
+
         return $this->createCartCheckoutSession($request);
     }
 
     public function success()
     {
-        if (!session()->has('checkout_session_created') || !session()->has('cart_checkout_session_created')) {
+        if (!session()->has('checkout_session_created')) {
             abort(403);
         }
 
-        if (session()->has('checkout_session_created')) {
-            session()->forget('checkout_session_created');
-        }
+        CartFacade::clear();
 
-        if (session()->has('cart_checkout_session_created')) {
-            session()->forget('cart_checkout_session_created');
-        }
+        session()->forget('checkout_session_created');
 
         return redirect()->route('home')->with('msg', "Payment Successful Order is on it's way");
     }
@@ -64,7 +61,7 @@ class StripeController extends Controller
                         'name' => $productName,
                         'images' => [$productImage]
                     ],
-                    'unit_amount' => (int) $totalPrice
+                    'unit_amount' => $totalPrice
                 ],
                 'quantity' => $quantity,
             ]],
@@ -84,7 +81,7 @@ class StripeController extends Controller
         $value = CartFacade::getContent();
         foreach ($value as $item) {
             $name = $item['name'];
-            $price = $item['price'];
+            $price = $item['price'] * 100;
             $quantity = $item['quantity'];
 
             $stripe = new \Stripe\StripeClient(config('stripe.sk'));
@@ -95,7 +92,7 @@ class StripeController extends Controller
                     'product_data' => [
                         'name' => $name,
                     ],
-                    'unit_amount' => (int) $price
+                    'unit_amount' => $price
                 ],
                 'quantity' => $quantity,
             ];
