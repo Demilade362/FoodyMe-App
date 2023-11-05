@@ -27,9 +27,12 @@
                     <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2">
                         <a href="#" class="nav-link active position-relative"">
                             <i class="bi bi-bell-fill"></i>
-                            <span class="badge bg-danger position-absolute top-1 start-100 translate-middle">12
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
+                            @if (count(auth()->user()->unreadNotifications) > 0)
+                                <span
+                                    class="badge bg-danger position-absolute top-1 start-100 translate-middle">{{ count(auth()->user()->unreadNotifications) }}
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            @endif
                         </a>
                     </li>
                     <li class="nav-item"><a href="{{ route('cart.list') }}" class="nav-link active position-relative ms-3">
@@ -99,32 +102,29 @@
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="Id2"
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="staticBackdropLabel">Notifications (12)</h5>
+        <h5 class="offcanvas-title" id="staticBackdropLabel">Notifications
+            @if (count(auth()->user()->unreadNotifications) > 0)
+                ({{ count(auth()->user()->unreadNotifications) }})
+            @endif
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        {{-- <div>
-            I will not close if you click outside of me.
-        </div> --}}
-        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
-        </div>
-
-        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
-        </div>
-
-        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
-        </div>
-
-        <div class="alert alert-light alert-dismissible fade show shadow-sm" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <span>Lorem, ipsum dolor sit amet consectetur adipisicing.</span>
-        </div>
+        @php
+            $notifications = auth()->user()->notifications ?? [];
+        @endphp
+        @foreach ($notifications as $notification)
+            <div class="alert alert-light shadow-sm" role="alert">
+                <span>Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
+                    {{ $notification['data']['quantity'] }}
+                    {{ $notification['data']['product'] }} and your order is been processed
+                </span>
+                <br>
+                <div class="text-end text-secondary">
+                    <span>{{ $notification['created_at']->diffForHumans() }}</span>
+                </div>
+            </div>
+        @endforeach
 
     </div>
 </div>
