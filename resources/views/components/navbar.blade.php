@@ -110,10 +110,19 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
+        <form action="{{ route('read-notify') }}" method="GET">
+            @csrf
+            <button type="submit" class="btn btn-danger col-12 mb-3 rounded-0">Mark All
+                As
+                Read</button>
+        </form>
         @php
             $notifications = auth()->user()->notifications ?? [];
+            $unreadNotifications = auth()->user()->unreadNotifications ?? [];
+            // dd($unreadNotifications);
         @endphp
-        @foreach ($notifications as $notification)
+        <p class="text-sm">Unread Notifications</p>
+        @forelse ($unreadNotifications as $notification)
             <div class="alert alert-light shadow-sm" role="alert">
                 <span>Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
                     {{ $notification['data']['quantity'] }}
@@ -124,7 +133,25 @@
                     <span>{{ $notification['created_at']->diffForHumans() }}</span>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <p class="text-secondary text-center text-sm">No Unread Notifications Found</p>
+        @endforelse
+
+        <p class="text-sm">Read Notifications</p>
+        @forelse ($notifications as $notification)
+            <div class="alert alert-light shadow-sm" role="alert">
+                <span>Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
+                    {{ $notification['data']['quantity'] }}
+                    {{ $notification['data']['product'] }} and your order is been processed
+                </span>
+                <br>
+                <div class="text-end text-secondary">
+                    <span>{{ $notification['created_at']->diffForHumans() }}</span>
+                </div>
+            </div>
+        @empty
+            <p class="text-secondary text-center text-sm">No Notifications Found</p>
+        @endforelse
 
     </div>
 </div>

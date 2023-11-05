@@ -7,6 +7,7 @@ use App\Http\Controllers\StripeController;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,10 @@ Route::middleware(['auth'])->group(function () {
     ])->except(
         ['create', 'store', 'update', 'destroy', 'edit']
     );
+    Route::get("/readNotifications", function (Request $request) {
+        $request->user()->unreadNotifications->markAsRead();
+        return Redirect::back();
+    })->name('read-notify');
     Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
     Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
     Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');

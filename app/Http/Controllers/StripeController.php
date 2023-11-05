@@ -110,7 +110,7 @@ class StripeController extends Controller
             //     'cancel_url' => route('home'),
             // ]);
 
-            event(new Order($request->user(), $name, $quantity));
+            event(new Order(auth()->user(), $name, $quantity));
         }
         return redirect()->route('success');
         // return redirect()->away($checkout_session->url);
