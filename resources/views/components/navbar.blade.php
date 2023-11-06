@@ -1,4 +1,9 @@
 @props(['color'])
+@php
+    $notifications = auth()->user()->notifications ?? [];
+    $unreadNotifications = auth()->user()->unreadNotifications ?? [];
+    // dd($unreadNotifications);
+@endphp
 <nav class="navbar navbar-expand-md {{ $color ?? 'bg-light' }} navbar-light sticky-top">
     <div class="container">
         <a href="{{ url('/') }}" class="navbar-brand text-danger">Foody<span class="text-warning">Me</span></a>
@@ -27,9 +32,9 @@
                     <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2">
                         <a href="#" class="nav-link active position-relative"">
                             <i class="bi bi-bell-fill"></i>
-                            @if (count(auth()->user()->unreadNotifications) > 0)
+                            @if (count($unreadNotifications) > 0)
                                 <span
-                                    class="badge bg-danger position-absolute top-1 start-100 translate-middle">{{ count(auth()->user()->unreadNotifications) }}
+                                    class="badge bg-danger position-absolute top-1 start-100 translate-middle">{{ count($unreadNotifications) }}
                                     <span class="visually-hidden">unread messages</span>
                                 </span>
                             @endif
@@ -103,8 +108,8 @@
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="staticBackdropLabel">Notifications
-            @if (count(auth()->user()->unreadNotifications) > 0)
-                ({{ count(auth()->user()->unreadNotifications) }})
+            @if (count($unreadNotifications) > 0)
+                ({{ count($unreadNotifications) }})
             @endif
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -116,11 +121,6 @@
                 As
                 Read</button>
         </form>
-        @php
-            $notifications = auth()->user()->notifications ?? [];
-            $unreadNotifications = auth()->user()->unreadNotifications ?? [];
-            // dd($unreadNotifications);
-        @endphp
         <p class="text-sm">Unread Notifications</p>
         @forelse ($unreadNotifications as $notification)
             <div class="alert alert-light shadow-sm" role="alert">
