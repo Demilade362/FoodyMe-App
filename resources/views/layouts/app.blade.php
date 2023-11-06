@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <link href="{{ asset('/build/assets/app-1dbb9ad6.css') }}" rel="stylesheet">
-    <script src="{{ asset('/build/assets/app-c75e0372.js') }}" defer></script>
+    <link href="{{ asset('../build/assets/app-1dbb9ad6.css') }}" rel="stylesheet">
+    <script src="{{ asset('../build/assets/app-c75e0372.js') }}" defer></script>
     <style>
         .form-control.table {
             display: inline;

@@ -14,8 +14,8 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-    <link href="{{ asset('/build/assets/app-1dbb9ad6.css') }}" rel="stylesheet">
-    <script src="{{ asset('/build/assets/app-c75e0372.js') }}" defer></script>
+    <link href="{{ asset('../build/assets/app-1dbb9ad6.css') }}" rel="stylesheet">
+    <script src="{{ asset('../build/assets/app-c75e0372.js') }}" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     {{-- <link rel="stylesheet" href="../main.css"> --}}
     <style>
