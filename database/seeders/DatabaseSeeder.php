@@ -14,16 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::where('email', 'admin@admin.com')->get();
-        if (!$user) {
-            User::create([
-                "name" => "Adminstrator",
-                "email" => "admin@admin.com",
-                "email_verified_at" => now(),
-                "password" => bcrypt('adminpassword'),
-                "role" => "admin"
-            ]);
-        }
+        User::firstOrNew([
+            'email' => 'admin@admin.com',
+        ], [
+            'name' => 'Administrator',
+            'email_verified_at' => now(),
+            'password' => bcrypt('adminpassword'),
+            'role' => 'admin',
+        ])->save();
+
+
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
@@ -31,6 +32,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(ProductSeeder::class);
+        // $this->call(ProductSeeder::class);
     }
 }
