@@ -18,7 +18,7 @@
 
 
     <link href="../build/assets/app-1dbb9ad6.css" rel="stylesheet">
-    <script src=../build/assets/app-c75e0372.js'" defer></script>
+    <script src=../build/assets/app-c75e0372.js defer></script>
 </head>
 
 <body class="bg-white">

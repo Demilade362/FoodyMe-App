@@ -18,7 +18,6 @@
 
 
     <link href="../build/assets/app-1dbb9ad6.css" rel="stylesheet">
-    <script src=../build/assets/app-c75e0372.js'" defer></script>
     <style>
         .form-control.table {
             display: inline;
@@ -36,6 +35,7 @@
 
     <x-footer />
 
+    <script src=../build/assets/app-c75e0372.js></script>
     @stack('scripts')
 </body>
 
