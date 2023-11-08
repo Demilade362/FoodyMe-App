@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Events\Order;
 use App\Http\Requests\StripeRequest;
+use App\Models\Order as ModelsOrder;
 use Darryldecode\Cart\Facades\CartFacade;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Route;
 
 class StripeController extends Controller
 {
@@ -35,7 +37,9 @@ class StripeController extends Controller
         if (!session()->has('checkout_session_created')) {
             abort(403);
         }
-
+        if (Route::getCurrentRoute()->action['as'] == 'success') {
+            event(new Order(auth()->user(), session('name'), session('quantity')));
+        }
 
         CartFacade::clear();
 
@@ -53,7 +57,9 @@ class StripeController extends Controller
         $quantity = $request->quantity;
         $productImage = $request->image_url;
 
+
         $stripe = new \Stripe\StripeClient(config('stripe.sk'));
+
 
         $checkout_session = $stripe->checkout->sessions->create([
             'line_items' => [[
@@ -70,12 +76,12 @@ class StripeController extends Controller
             'mode' => 'payment',
             'customer_email' => $this->getEmail(),
             'success_url' => route('success'),
-            'cancel_url' => route('home'),
+            'cancel_url' => route('products.show', [
+                'product' => $request->id
+            ]),
         ]);
 
-        event(new Order($request->user(), $productName, $quantity));
-
-        return redirect()->away($checkout_session->url);
+        return redirect()->away($checkout_session->url)->with('name', $productName)->with('quantity', $quantity)->with('price', $request->price)->with('group_order');
     }
 
     public function createCartCheckoutSession(Request $request)
@@ -104,12 +110,21 @@ class StripeController extends Controller
                 'mode' => 'payment',
                 'customer_email' => $this->getEmail(),
                 'success_url' => route('success'),
-                'cancel_url' => route('home'),
+                'cancel_url' => route('cart.list'),
             ]);
-
-            event(new Order(auth()->user(), $name, $quantity));
         }
 
         return redirect()->away($checkout_session->url);
+    }
+
+    public function webhook(Request $request)
+    {
+        if ($request->type === 'charge.succeeded') {
+            try {
+                ModelsOrder::create();
+            } catch (\Exception $e) {
+                abort(419, $e->getMessage());
+            }
+        }
     }
 }

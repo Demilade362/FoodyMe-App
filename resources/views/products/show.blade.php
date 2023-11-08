@@ -100,10 +100,11 @@
                     <form action="{{ route('session') }}" method="post">
                         @csrf
                         @method('POST')
+                        <input type="hidden" name="id" value={{ $product->id }}>
                         <input type="text" value="{{ $product->product_name }}" name="product_name" id="product_name"
                             hidden>
                         <input type="text" name="image_url" id="image"
-                            value="http://127.0.0.1:8000/{{ $product->image->image_url }}" hidden>
+                            value="https://foodyme-app-production.up.railway.app/{{ $product->image->image_url }}" hidden>
                         <input type="number" name="quantity" id="quantity" hidden>
                         <input type="number" name="price" id="price" value="{{ $product->price }}" hidden>
                         <label for="address" class="form-label">Delivery Address</label>

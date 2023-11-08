@@ -5,7 +5,6 @@ use App\Http\Controllers\admin\{
     ProductController
 };
 use App\Models\User;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 
 
