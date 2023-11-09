@@ -65,7 +65,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -73,7 +73,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $data = $request->validate([
+            'product_name' => 'string',
+            'product_description' => 'string|min:10|max:255',
+            'price' => 'decimal:2'
+        ]);
+
+        $product->update($data);
+
+        return redirect()->route('admin.products.index')->with('msg', "{$product->product_name} Product has been Updated");
     }
 
     /**
@@ -81,6 +89,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('admin.products.index')->with('msg', "{$product->product_name} Product has been Deleted");
     }
 }

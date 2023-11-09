@@ -20,14 +20,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Order $order)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Order $order)

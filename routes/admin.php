@@ -19,5 +19,5 @@ Route::middleware(['auth', 'can:is-admin'])->group(function () {
     Route::post('suspended/{id}', [CustomerController::class, 'restore'])->name('customers.restore')->withTrashed();
     Route::resource('customers', CustomerController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
     Route::resource('products', ProductController::class);
-    Route::resource('orders', OrderController::class)->only(['index', 'show', 'destroy']);
+    Route::resource('orders', OrderController::class)->only(['index', 'destroy']);
 });

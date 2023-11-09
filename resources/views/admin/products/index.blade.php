@@ -14,29 +14,33 @@
                 <tr>
                     <th scope="col">Product Name</th>
                     <th scope="col">Price</th>
-                    <th scope="col" align="start"></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($products as $product)
-                    <tr class="">
+                    <tr>
                         <td>{{ $product->product_name }}</td>
                         <td>{{ $product->price }}</td>
-                        <td align="end">
+                        <td align="center">
                             <div class="d-flex-justify-content-between">
                                 <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-success btn-sm">
                                     <i class="bi bi-eye"></i>
                                     View
                                 </a>
-                                <a href="{{ route('admin.products.show', $product->id) }}"
-                                    class="btn btn-secondary ms-2 btn-sm">
-                                    <i class="bi bi-eye"></i>
+                                <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-secondary btn-sm">
+                                    <i class="bi bi-pencil"></i>
                                     Edit
                                 </a>
-                                <a href="{{ route('admin.products.show', $product->id) }}" class="btn btn-danger btn-sm">
-                                    <i class="bi bi-trash"></i>
-                                    Delete
-                                </a>
+                                <form action="{{ route('admin.products.destroy', $product->id) }}" method="post"
+                                    class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                        Delete
+                                    </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
