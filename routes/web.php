@@ -28,6 +28,9 @@ Route::get('/', function (Request $request) {
     return view('welcome', compact('products'));
 })->name('welcome');
 
+Route::view('contact', 'contact');
+Route::view('about', 'about');
+
 Route::middleware(['auth'])->group(function () {
     // Profile Routes
     Route::middleware('password.confirm')->group(function () {

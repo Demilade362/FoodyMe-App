@@ -12,11 +12,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-auto text-center">
                 <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="/" class="nav-link active">About</a></li>
-                <li class="nav-item"><a href="/" class="nav-link active">Contact</a></li>
-                <li class="nav-item"><a href="/" class="nav-link active">Services</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link active">About</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link active">Contact</a></li>
+                <li class="nav-item"><a href="mailto:ademolademilade362@gmail.com" class="nav-link active">Report a
+                        Problem</a></li>
                 @auth
                     <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Products</a></li>
 

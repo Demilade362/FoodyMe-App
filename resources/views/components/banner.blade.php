@@ -1,12 +1,13 @@
  <div class="my-3">
      <div class="container">
-         <div class="row justify-content-between align-items-center">
-             <div class="col-lg-5">
-                 <h1 class="display-1 mb-0 text-danger">
+         <div class="row justify-content-between align-items-center my-5">
+             <div class="col-lg-5 text-center text-lg-start">
+                 <h1 class="display-1 mb-3 text-danger">
                      Foody<span class="text-warning">Me</span>
                  </h1>
                  <p class="lead">
-                     The taste is always unique from the rest with foody me.
+                     The taste is always unique from the rest with foody me,
+                     That why you should taste and order now
                  </p>
                  <a href="/products" class="btn btn-danger btn-lg">Order Now</a>
              </div>

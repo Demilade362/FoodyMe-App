@@ -10,7 +10,7 @@
         @endif
 
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center align-items-center">
-            @forelse ($products as $product)
+            @forelse ($products  as $product)
                 <div class="col">
                     <div class="card">
                         <img src="{{ $product->image->image_url }}" class="card-img-top" alt="...">

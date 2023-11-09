@@ -10,10 +10,10 @@
             <div class="col-lg-2 col-md-6">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-decoration-none">Home</a></li>
-                    <li><a href="#" class="text-decoration-none">About</a></li>
-                    <li><a href="#" class="text-decoration-none">Products</a></li>
-                    <li><a href="#"class="text-decoration-none">Contact</a></li>
+                    <li><a href="/" class="text-decoration-none">Home</a></li>
+                    <li><a href="/about" class="text-decoration-none">About</a></li>
+                    <li><a href="/products" class="text-decoration-none">Products</a></li>
+                    <li><a href="/contact"class="text-decoration-none">Contact</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6">
@@ -29,7 +29,8 @@
                 <h5>Subscribe to Newsletter</h5>
                 <p>Stay up to date with our latest news and offers.</p>
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control rounded-0" placeholder="Your email">
+                    <input type="email" class="form-control rounded-0" placeholder="Your email" aria-label="Button"
+                        aria-describedby="">
                     <div class="input-group-append">
                         <button class="btn btn-danger rounded-0" type="button">Subscribe</button>
                     </div>
