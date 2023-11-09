@@ -13,8 +13,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::paginate(6);
-        return view('admin.Orders.index', compact('orders'));
+        $normalOrders = Order::where('group_order', '!=', 1)->paginate(6);
+        $groupOrders = Order::where('group_order', '!=', 0)->paginate(6);
+        return view('admin.Orders.index', compact('normalOrders', 'groupOrders'));
     }
 
     /**

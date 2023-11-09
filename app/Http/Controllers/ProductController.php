@@ -20,6 +20,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        session()->forget(['name', 'price', 'quantity', 'group_order', 'address', 'items']);
         return view('products.show', compact('product'));
     }
 }

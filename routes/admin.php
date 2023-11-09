@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\{
     CustomerController,
+    OrderController,
     ProductController
 };
 use App\Models\User;
@@ -16,5 +17,5 @@ Route::middleware(['auth', 'can:is-admin'])->group(function () {
 
     Route::resource('customers', CustomerController::class);
     Route::resource('products', ProductController::class);
-    Route::view('/orders', 'admin.Orders.index')->name('orders');
+    Route::resource('orders', OrderController::class);
 });

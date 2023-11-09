@@ -131,7 +131,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.orders') }}">
+                        <a class="nav-link" href="{{ route('admin.orders.index') }}">
                             <i class="bi bi-clipboard-check"></i> Orders
                         </a>
                     </li>
@@ -185,8 +185,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.orders') ? 'active' : '' }}"
-                        href="{{ route('admin.orders') }}">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.orders.index') ? 'active' : '' }}"
+                        href="{{ route('admin.orders.index') }}">
                         <i class="bi bi-clipboard-check"></i> Orders
                     </a>
                 </li>

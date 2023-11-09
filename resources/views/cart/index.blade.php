@@ -65,17 +65,42 @@
             <div class="d-flex justify-content-end align-items-center">
                 <form action="{{ route('cart.clear') }}" method="POST">
                     @csrf
-                    <button class="btn btn-danger">
+                    <button class="btn btn-danger me-3">
                         <i class="bi bi-trash"></i>
                         Clear
                         Carts</button>
                 </form>
-                <form action="{{ route('cart-session') }}" method="POST" class="ms-4">
-                    @csrf
-                    <button class="btn btn-success">
-                        <i class="bi bi-check"></i>
-                        Checkout</button>
-                </form>
+                <button class="btn btn-success" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                    data-bs-target="#modalId">
+                    <i class="bi bi-check"></i>
+                    Checkout</button>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalId" data-bs-backdrop="static" data-bs-keyboard="false"
+            aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">Additional Info</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="{{ route('cart-session') }}" method="POST">
+                        <div class="modal-body">
+                            @csrf
+                            <div>
+                                <label for="address" class="form-label">Address</label>
+                                <input type="text" name="address" id="address" class="form-control mb-3"
+                                    placeholder="16, Your address, Region or State">
+                            </div>
+                            <button class="btn btn-success rounded-0 col-12">
+                                <i class="bi bi-check"></i>
+                                Check Out</button>
+                        </div>
+                        {{-- <div class="modal-footer"> --}}
+                        {{-- </div> --}}
+                    </form>
+                </div>
             </div>
         </div>
     </div>

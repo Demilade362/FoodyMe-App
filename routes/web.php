@@ -60,7 +60,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('session', [StripeController::class, 'session'])->name('session');
     Route::post('cart-session', [StripeController::class, 'cartSession'])->name('cart-session');
     Route::get('success', [StripeController::class, 'success'])->name('success');
-    Route::post('webhook', [StripeController::class, 'webhook'])->name('webhook');
 });
 
 

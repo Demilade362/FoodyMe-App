@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->decimal('price', places: 2);
+            $table->string('product_name');
+            $table->decimal('total_price', places: 2);
             $table->integer('quantity');
+            $table->string('address');
             $table->boolean('group_order');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

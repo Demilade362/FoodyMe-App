@@ -15,7 +15,8 @@ class Order extends Model
         'price',
         'quantity',
         'group_order',
-        'user_id'
+        'user_id',
+        'address'
     ];
 
 

@@ -10,6 +10,7 @@ class CartController extends Controller
     public function cartList()
     {
         $cartItems = Cart::getContent();
+        session()->forget(['name', 'price', 'quantity', 'group_order', 'address', 'items']);
         return view('cart.index', compact('cartItems'));
     }
 
