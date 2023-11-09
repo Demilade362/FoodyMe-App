@@ -25,12 +25,11 @@
                         <td>{{ $user->email }}</td>
                         <td align="end">
                             <div class="d-flex-justify-content-between">
-                                <form action={{ "customers/$user->id" }} method="POST">
+                                <form action={{ route('admin.customers.restore', $user->id) }} method="POST">
                                     @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                        Suspend Account
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                        <i class="bi bi-person"></i>
+                                        Restore Account
                                     </button>
                                 </form>
                             </div>

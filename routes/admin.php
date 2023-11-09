@@ -15,7 +15,9 @@ Route::middleware(['auth', 'can:is-admin'])->group(function () {
         return view("admin.index", compact('customers'));
     })->name('dashboard');
 
-    Route::resource('customers', CustomerController::class);
+    Route::get('suspended', [CustomerController::class, 'trashed'])->name('customers.suspend');
+    Route::post('suspended/{id}', [CustomerController::class, 'restore'])->name('customers.restore')->withTrashed();
+    Route::resource('customers', CustomerController::class)->only(['index', 'create', 'store', 'show', 'destroy']);
     Route::resource('products', ProductController::class);
     Route::resource('orders', OrderController::class)->only(['index', 'show', 'destroy']);
 });

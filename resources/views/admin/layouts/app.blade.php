@@ -61,7 +61,7 @@
         }
 
         .sidebar .logout-btn {
-            margin-top: 15rem;
+            margin-top: 12rem;
         }
 
         .content {
@@ -168,6 +168,12 @@
                     <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.customers.create') ? 'active' : '' }}"
                         href="{{ route('admin.customers.create') }}">
                         <i class="bi bi-person-fill"></i>Create Customer
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ \Illuminate\Support\Facades\Route::is('admin.customers.create') ? 'active' : '' }}"
+                        href="{{ route('admin.customers.suspend') }}">
+                        <i class="bi bi-person-fill"></i>Suspended Customers
                     </a>
                 </li>
                 <li class="nav-item">

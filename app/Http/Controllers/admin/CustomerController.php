@@ -42,32 +42,39 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(string $id)
     {
         //
+    }
+    /**
+     * Display all trashed resource.
+     */
+    public function trashed()
+    {
+        $users = User::onlyTrashed()->paginate(8);
+        return view('admin.Customers.suspend', compact('users'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
+
+    public function restore(string $id)
     {
-        //
+        $user = User::onlyTrashed()->findOrFail($id);
+        $user->restore();
+
+
+        return redirect()->route('admin.customers.index')->with('msg', "$user->name account has been restored");
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
-        //
+        $user = User::findorFail($id);
+
+        $user->delete();
+
+        return redirect()->route('admin.customers.index')->with('msg', "$user->name account has been suspended");
     }
 }

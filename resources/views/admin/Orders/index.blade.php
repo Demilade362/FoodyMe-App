@@ -32,21 +32,14 @@
                         <td>{{ $order->group_order == 1 ? 'True' : 'False' }}</td>
                         <td>{{ $order->created_at->diffForHumans() }}</td>
                         <td align="end">
-                            <div class="d-flex-justify-content-between">
-                                <a href="{{ route('admin.orders.show', $order->id) }}" class="btn btn-success btn-sm">
-                                    <i class="bi bi-eye"></i>
-                                    View
-                                </a>
-                                <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST"
-                                    class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                        Take Order
-                                    </button>
-                                </form>
-                            </div>
+                            <form action="{{ route('admin.orders.destroy', $order->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i>
+                                    Take Order
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
