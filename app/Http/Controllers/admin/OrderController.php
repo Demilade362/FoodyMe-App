@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Events\OrderTaken;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,25 +14,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $normalOrders = Order::where('group_order', '!=', 1)->paginate(6);
-        $groupOrders = Order::where('group_order', '!=', 0)->paginate(6);
-        return view('admin.Orders.index', compact('normalOrders', 'groupOrders'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+        // $orders = Order::paginate(6);
+        $orders = Order::latest()->paginate(8);
+        return view('admin.Orders.index', compact('orders'));
     }
 
     /**
@@ -43,26 +28,14 @@ class OrderController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Order $order)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Order $order)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+
+        event(new OrderTaken($order->user, $order->product_name));
+
+        return redirect()->route('admin.orders.index')->with('msg', "$order->product_name Order for {$order->user->name} has been taken");
     }
 }

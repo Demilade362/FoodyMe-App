@@ -17,5 +17,5 @@ Route::middleware(['auth', 'can:is-admin'])->group(function () {
 
     Route::resource('customers', CustomerController::class);
     Route::resource('products', ProductController::class);
-    Route::resource('orders', OrderController::class);
+    Route::resource('orders', OrderController::class)->only(['index', 'show', 'destroy']);
 });

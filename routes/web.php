@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function (Request $request) {
     $products = Product::limit(6)->get();
+    dd($request->user()->unreadNotifications);
     return view('welcome', compact('products'));
 })->name('welcome');
 

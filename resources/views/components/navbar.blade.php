@@ -124,10 +124,20 @@
         <p class="text-sm">Unread Notifications</p>
         @forelse ($unreadNotifications as $notification)
             <div class="alert alert-light shadow-sm" role="alert">
-                <span>Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
-                    {{ $notification['data']['quantity'] }}
-                    {{ $notification['data']['product'] }} and your order is been processed
+                <span class="mb-3">Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
+
+                    @if (isset($notification['data']['quantity']))
+                        {{ $notification['data']['quantity'] }}
+                    @endif
+
+
+                    @if (isset($notification['data']['product']))
+                        {{ $notification['data']['product'] }}
+                    @elseif(isset($notification['data']['name']))
+                        {{ $notification['data']['name'] }}
+                    @endif
                 </span>
+                <br>
                 <br>
                 <div class="text-end text-secondary">
                     <span>{{ $notification['created_at']->diffForHumans() }}</span>
@@ -140,10 +150,19 @@
         <p class="text-sm">Read Notifications</p>
         @forelse ($notifications as $notification)
             <div class="alert alert-light shadow-sm" role="alert">
-                <span>Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
-                    {{ $notification['data']['quantity'] }}
-                    {{ $notification['data']['product'] }} and your order is been processed
+                <span class="mb-3">Hello {{ auth()->user()->name }}, {{ $notification['data']['message'] }}
+
+                    @if (isset($notification['data']['quantity']))
+                        {{ $notification['data']['quantity'] }}
+                    @endif
+
+                    @if (isset($notification['data']['product']))
+                        {{ $notification['data']['product'] }}
+                    @elseif(isset($notification['data']['name']))
+                        {{ $notification['data']['name'] }}
+                    @endif
                 </span>
+                <br>
                 <br>
                 <div class="text-end text-secondary">
                     <span>{{ $notification['created_at']->diffForHumans() }}</span>
