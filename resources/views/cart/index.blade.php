@@ -97,8 +97,6 @@
                                 <i class="bi bi-check"></i>
                                 Check Out</button>
                         </div>
-                        {{-- <div class="modal-footer"> --}}
-                        {{-- </div> --}}
                     </form>
                 </div>
             </div>

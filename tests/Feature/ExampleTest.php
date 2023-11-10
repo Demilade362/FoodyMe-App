@@ -70,6 +70,7 @@ class ExampleTest extends TestCase
     public function test_the_application_register_page_register_a_user(): void
     {
         $user = User::factory()->create();
+
         $response = $this->post('/register', [$user]);
 
         $response->assertStatus(302);

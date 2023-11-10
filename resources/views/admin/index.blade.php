@@ -10,7 +10,7 @@
                     <p class="card-text">
                         Check your Orders so you can deliver on time
                     </p>
-                    <a href="#" class="btn btn-danger">View Orders
+                    <a href="/admin/orders" class="btn btn-danger">View Orders
                         <i class="bi bi-eye"></i>
                     </a>
                 </div>
@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h5 class="card-title placeholder-glow">Products</h5>
                     <p class="card-text placeholder-glow">Add new products so your customers can check out</p>
-                    <a href="#" class="btn btn-danger">Add Products
+                    <a href="/admin/products" class="btn btn-danger">Add Products
                         <i class="bi bi-plus"></i>
                     </a>
                 </div>
