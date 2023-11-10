@@ -49,17 +49,17 @@
                                     <td>{{ $customer->email }}</td>
                                     <td align="end">
                                         <div class="d-flex-justify-content-between">
-                                            <button class="btn btn-danger btn-sm">
+                                            <a href="/admin/customers" class="btn btn-danger btn-sm">
                                                 <i class="bi bi-trash"></i>
                                                 Suspend Account
-                                            </button>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <a href="#" class="btn btn-danger">View All Customers
+                    <a href="/admin/customers" class="btn btn-danger">View All Customers
                         <i class="bi bi-eye"></i>
                     </a>
                 </div>
