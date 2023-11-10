@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-around">
             <div class="col-lg-6 text-center">
-                <h1 class="display-3 mb-3 text-danger">
+                <h1 class="display-5 mb-3 text-danger">
                     <span class="text-dark">About</span> Foody<span class="text-warning">Me</span>
                 </h1>
                 <p class="lead">

@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap'); */
 
+
+@font-face {
+    font-family: Poppins;
+    src: url('./Poppins-Regular.ttf');
+}
 
 html {
-    font-family: Roboto;
+    font-family: Poppins;
 }
 
 #product {
