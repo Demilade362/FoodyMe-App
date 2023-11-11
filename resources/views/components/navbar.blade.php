@@ -18,8 +18,8 @@
                 <li class="nav-item"><a href="/contact" class="nav-link active">Contact</a></li>
                 <li class="nav-item"><a href="mailto:ademolademilade362@gmail.com" class="nav-link active">Report a
                         Problem</a></li>
+                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Products</a></li>
                 @auth
-                    <li class="nav-item"><a href="{{ route('home') }}" class="nav-link active">Products</a></li>
 
                     @can('is-admin')
                         <li class="nav-item">
@@ -29,6 +29,13 @@
                 @endauth
             </ul>
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="{{ route('cart.list') }}" class="nav-link active position-relative mx-3">
+                        <i class="bi bi-cart-fill"></i>
+                        <span
+                            class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                    </a></li>
                 @auth
                     <li class="nav-item" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2">
                         <a href="#" class="nav-link active position-relative"">
@@ -41,13 +48,6 @@
                             @endif
                         </a>
                     </li>
-                    <li class="nav-item"><a href="{{ route('cart.list') }}" class="nav-link active position-relative ms-3">
-                            <i class="bi bi-cart-fill"></i>
-                            <span
-                                class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
-                        </a></li>
 
 
                     <li class="nav-item dropdown ms-3">

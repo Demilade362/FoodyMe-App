@@ -20,31 +20,31 @@
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="lead">
                                     ${{ $product->price }}</span>
-                                @auth
-                                    <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-                                        @csrf
-                                        <input type="hidden" value="{{ $product->id }}" name="id">
-                                        <input type="hidden" value="{{ $product->product_name }}" name="name">
-                                        <input type="hidden" value="{{ $product->price }}" name="price">
-                                        <input type="hidden" value="{{ $product->image->image_url }}" name="image">
-                                        <input type="hidden" value="1" name="quantity">
-                                        <button class="btn btn-light d-flex justify-content-around">
-                                            <i class="bi bi-cart me-2"></i>
-                                            Add To Cart
-                                        </button>
-                                    </form>
 
-                                @endauth
+                                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" value="{{ $product->id }}" name="id">
+                                    <input type="hidden" value="{{ $product->product_name }}" name="name">
+                                    <input type="hidden" value="{{ $product->price }}" name="price">
+                                    <input type="hidden" value="{{ $product->image->image_url }}" name="image">
+                                    <input type="hidden" value="1" name="quantity">
+                                    <button class="btn btn-light d-flex justify-content-around">
+                                        <i class="bi bi-cart me-2"></i>
+                                        Add To Cart
+                                    </button>
+                                </form>
+
+
                             </div>
 
 
-                            @auth
-                                <a href="{{ route('products.show', $product->id) }}"
-                                    class="btn btn-danger justify-content-center col-12 d-flex align-items-center">
-                                    <i class="bi bi-cart-fill me-2"></i>
-                                    <span>Order Now</span>
-                                </a>
-                            @endauth
+
+                            <a href="{{ route('products.show', $product->id) }}"
+                                class="btn btn-danger justify-content-center col-12 d-flex align-items-center">
+                                <i class="bi bi-cart-fill me-2"></i>
+                                <span>Order Now</span>
+                            </a>
+
 
                         </div>
                     </div>

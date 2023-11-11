@@ -31,6 +31,18 @@ Route::get('/', function (Request $request) {
 Route::view('contact', 'contact');
 Route::view('about', 'about');
 
+
+// Cart Route     
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
+// Products Route
+Route::get('/products', [ProductController::class, 'index'])->name('home');
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show')->middleware('auth');
+
 Route::middleware(['auth'])->group(function () {
     // Profile Routes
     Route::middleware('password.confirm')->group(function () {
@@ -39,12 +51,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('profile/{user}', [ProfileController::class, 'updatePass'])->name('profile.update.pass');
         Route::delete("profile/{user}", [ProfileController::class, 'destroy'])->name('profile.destroy');
     });
-    // Products Route
-    Route::resource('products', ProductController::class)->names([
-        'index' => 'home'
-    ])->except(
-        ['create', 'store', 'update', 'destroy', 'edit']
-    );
 
     // Notification Routes
     Route::get("/readNotifications", function (Request $request) {
@@ -52,12 +58,6 @@ Route::middleware(['auth'])->group(function () {
         return Redirect::back();
     })->name('read-notify');
 
-    // Cart Route     
-    Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
-    Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-    Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-    Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-    Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
     // Payment System Route 
     Route::post('session', [StripeController::class, 'session'])->name('session');
