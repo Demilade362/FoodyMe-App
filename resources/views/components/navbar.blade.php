@@ -4,7 +4,7 @@
     $unreadNotifications = auth()->user()->unreadNotifications ?? [];
     // dd($unreadNotifications);
 @endphp
-<nav class="navbar navbar-expand-md {{ $color ?? 'bg-light' }} navbar-light sticky-top">
+<nav class="navbar navbar-expand-lg {{ $color ?? 'bg-light' }} navbar-light sticky-top">
     <div class="container">
         <a href="{{ url('/') }}" class="navbar-brand text-danger">Foody<span class="text-warning">Me</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -12,7 +12,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto text-center">
+            <ul class="navbar-nav ms-lg-auto text-center">
                 <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="/about" class="nav-link active">About</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link active">Contact</a></li>
@@ -30,10 +30,13 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a href="{{ route('cart.list') }}" class="nav-link active position-relative mx-3">
-                        <i class="bi bi-cart-fill"></i>
-                        <span
-                            class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
-                            <span class="visually-hidden">unread messages</span>
+                        <span class="text-sm {{ count(Cart::getContent()) > 0 ? 'd-none' : '' }}">Cart</span>
+                        <span>
+                            <i class="bi bi-cart-fill"></i>
+                            <span
+                                class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
                         </span>
                     </a></li>
                 @auth

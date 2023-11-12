@@ -1,79 +1,122 @@
-<div class="container mt-5">
-    <h1 class="display-5 my-5 mb-5 text-center">Customer Reviews</h1>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 text-center">
-                <div class="text-center">
-                    <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="rounded-circle img-fluid mt-5"
-                        width="60%" alt="Customer 1">
-                </div>
-                <div class="card-body mt-5">
-                    <h5 class="card-title">Micheal Raymond</h5>
-                    <p class="card-text">
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <div class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section id="reviews">
+    <h1 class="display-5 text-center">Customer Reviews</h1>
+    <div class="container">
+        <h1 class="section-header">Client Review <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+        </h1>
+        <div class="testimonials">
 
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 text-center">
-                <div class="text-center">
-                    <img src="https://xsgames.co/randomusers/avatar.php?g=female" class="rounded-circle img-fluid mt-5"
-                        width="60%"alt="Customer 2">
-                </div>
-                <div class="card-body mt-5">
-                    <h5 class="card-title">Sarah Clinton</h5>
-                    <p class="card-text">
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                        nulla pariatur."
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <div class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star"></i>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="single-item">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile">
+                                        <div class="img-area">
+                                            <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="">
+                                        </div>
+                                        <div class="bio">
+                                            <h2>Dave Wood</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet,
+                                            consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam
+                                            error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi
+                                            saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur
+                                            molestiae voluptatum!</p>
+                                        <p class="socials">
+                                            <i class="fa fa-twitter"></i>
+                                            <i class="fa fa-behance"></i>
+                                            <i class="fa fa-pinterest"></i>
+                                            <i class="fa fa-dribbble"></i>
+                                            <i class="fa fa-vimeo"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="single-item">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile">
+                                        <div class="img-area">
+                                            <img src="https://xsgames.co/randomusers/avatar.php?g=female"
+                                                alt="">
+                                        </div>
+                                        <div class="bio">
+                                            <h2>Martin Guptill</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet,
+                                            consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam
+                                            error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi
+                                            saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur
+                                            molestiae voluptatum!</p>
+                                        <p class="socials">
+                                            <i class="fa fa-twitter"></i>
+                                            <i class="fa fa-behance"></i>
+                                            <i class="fa fa-pinterest"></i>
+                                            <i class="fa fa-dribbble"></i>
+                                            <i class="fa fa-vimeo"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="single-item">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile">
+                                        <div class="img-area">
+                                            <img src="https://xsgames.co/randomusers/avatar.php?g=male" alt="">
+                                        </div>
+                                        <div class="bio">
+                                            <h2>Stephen Jones</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet,
+                                            consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam
+                                            error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi
+                                            saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur
+                                            molestiae voluptatum!</p>
+                                        <p class="socials">
+                                            <i class="fa fa-twitter"></i>
+                                            <i class="fa fa-behance"></i>
+                                            <i class="fa fa-pinterest"></i>
+                                            <i class="fa fa-dribbble"></i>
+                                            <i class="fa fa-vimeo"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 text-center">
-                <div class="text-center">
-                    <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="rounded-circle img-fluid mt-5"
-                        width="60%" alt="Customer 3">
-                </div>
-                <div class="card-body mt-5">
-                    <h5 class="card-title">Riyhad Dembele</h5>
-                    <p class="card-text">
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                        mollit anim id est laborum."
-                    </p>
-                </div>
-                <div class="card-footer bg-white border-0">
-                    <div class="text-warning">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star"></i>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-</div>
+</section>

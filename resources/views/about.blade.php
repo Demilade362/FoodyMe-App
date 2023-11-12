@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div class="col-lg-6 d-none d-lg-block">
-                <img src="assets/chef.jpg" width="500" class="img-fluid" alt="image">
+                <img src="assets/burger_cartoon.jpeg" class="img-fluid" alt="image">
             </div>
         </div>
     </div>
