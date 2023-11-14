@@ -8,7 +8,7 @@
                  <p class="lead">
                      The taste is always unique from the rest with foody me
                  </p>
-                 <a href="/products" class="btn btn-danger btn-lg">Order Now</a>
+                 <a href="@auth /products @else /login @endauth" class="btn btn-danger btn-lg">Order Now</a>
              </div>
              <div class="col-lg-5 d-lg-block d-none">
                  <img src="assets/chef2.png" class="img-fluid" alt="image">

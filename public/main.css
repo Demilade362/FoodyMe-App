@@ -19,6 +19,9 @@ html {
     display: none;
 }
 
+td {
+    font-size: medium;
+}
 
 #reviews {
     display: grid;
@@ -88,7 +91,7 @@ html {
     text-align: justify;
 }
 
-.content p span {
+.content p #content {
     font-size: 48px;
     margin-right: 20px;
     color: #ffc107;

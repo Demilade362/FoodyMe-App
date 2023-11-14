@@ -30,6 +30,7 @@ Route::get('/', function (Request $request) {
 
 Route::view('contact', 'contact');
 Route::view('about', 'about');
+Route::view('coming-soon', 'errors.coming-soon');
 
 
 // Cart Route     

@@ -75,4 +75,25 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(302);
     }
+
+    public function test_the_application_product_page_returns_a_successful_response(): void
+    {
+        $response = $this->get('/products');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_the_application_profile_page_returns_a_successful_response(): void
+    {
+        $response = $this->get('/profile');
+
+        $response->assertStatus(302);
+    }
+
+    public function test_the_application_login_route_returns_a_redirect(): void
+    {
+        $response = $this->post("/logout");
+
+        $response->assertStatus(302);
+    }
 }

@@ -5,9 +5,9 @@
         <div class="col-md-6">
             <div class="card border-0">
                 <div class="card-body">
-                    <h5 class="card-title">
-                        Orders</h5>
-                    <p class="card-text">
+                    <h3 class="card-title">
+                        Orders</h3>
+                    <p class="card-text text-sm">
                         Check your Orders so you can deliver on time
                     </p>
                     <a href="/admin/orders" class="btn btn-danger">View Orders
@@ -19,7 +19,7 @@
         <div class="col-md-6">
             <div class="card border-0">
                 <div class="card-body">
-                    <h5 class="card-title placeholder-glow">Products</h5>
+                    <h3 class="card-title placeholder-glow">Products</h3>
                     <p class="card-text placeholder-glow">Add new products so your customers can check out</p>
                     <a href="/admin/products" class="btn btn-danger">Add Products
                         <i class="bi bi-plus"></i>

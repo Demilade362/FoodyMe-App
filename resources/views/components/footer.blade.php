@@ -19,10 +19,10 @@
             <div class="col-lg-2 col-md-6">
                 <h5>Services</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#" class="text-decoration-none">Food Delivery</a></li>
-                    <li><a href="#" class="text-decoration-none">Catering Services</a></li>
-                    <li><a href="#" class="text-decoration-none">Party Hosting</a></li>
-                    <li><a href="#" class="text-decoration-none">Home Cooking Service</a></li>
+                    <li><a href="/coming-soon" class="text-decoration-none">Food Delivery</a></li>
+                    <li><a href="/coming-soon" class="text-decoration-none">Catering Services</a></li>
+                    <li><a href="/coming-soon" class="text-decoration-none">Party Hosting</a></li>
+                    <li><a href="/coming-soon" class="text-decoration-none">Home Cooking Service</a></li>
                 </ul>
             </div>
             <div class="col-lg-4 col-md-6">

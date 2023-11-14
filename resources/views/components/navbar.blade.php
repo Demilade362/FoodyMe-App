@@ -30,13 +30,11 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a href="{{ route('cart.list') }}" class="nav-link active position-relative mx-3">
-                        <span class="text-sm {{ count(Cart::getContent()) > 0 ? 'd-none' : '' }}">Cart</span>
-                        <span>
-                            <i class="bi bi-cart-fill"></i>
-                            <span
-                                class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
-                                <span class="visually-hidden">unread messages</span>
-                            </span>
+                        <i class="bi bi-cart-fill"></i>
+                        <span
+                            class="position-absolute top-1 start-100 translate-middle badge bg-danger {{ count(Cart::getContent()) == 0 ? 'd-none' : '' }}">{{ count(Cart::getContent()) }}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
                         </span>
                     </a></li>
                 @auth

@@ -5,9 +5,9 @@
         </h1>
         <div class="testimonials">
 
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active" data-interval="2000">
                         <div class="single-item">
                             <div class="row">
                                 <div class="col-md-5">
@@ -22,7 +22,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="content">
-                                        <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet,
+                                        <p><span id="content"><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor
+                                            sit amet,
                                             consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam
                                             error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi
                                             saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur
@@ -39,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-interval="2000">
                         <div class="single-item">
                             <div class="row">
                                 <div class="col-md-5">
@@ -55,7 +56,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="content">
-                                        <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet,
+                                        <p><span id="content"><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor
+                                            sit amet,
                                             consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam
                                             error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi
                                             saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur
@@ -72,7 +74,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-interval="2000">
                         <div class="single-item">
                             <div class="row">
                                 <div class="col-md-5">
@@ -87,7 +89,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="content">
-                                        <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet,
+                                        <p><span id="content"><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor
+                                            sit amet,
                                             consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam
                                             error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi
                                             saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur
